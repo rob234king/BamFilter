@@ -23,7 +23,6 @@ def filter_bam(input_bam_path, output_bam_path):
     output_bam = pysam.AlignmentFile(output_bam_path, 'wb', template=input_bam)
 
     # Iterate through the BAM file and write only the reads without secondary alignments
-    print(reads_with_secondary)
     for read in input_bam:
         
         if read.query_name not in reads_with_secondary:
